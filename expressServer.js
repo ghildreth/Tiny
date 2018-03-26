@@ -140,8 +140,7 @@ app.get('/urls/test',(request, response)=>{
 });
 
 app.get('/urls/:id', (request, response) => {
-  // added in user_id to access the cookie
-  console.log('does this work');
+
   let shortURL = request.params.id;
   let user_id = request.session.user_id;
   let user = users[user_id];
@@ -232,16 +231,15 @@ app.post('/login', (request, response,) => {
 
   if (result) {
     if (bcrypt.compareSync(request.body.password, result.password)) {
-      console.log("user id and password matches");
       request.session.user_id = result.id;
       console.log(request.session.user_id);
       response.redirect('/urls');
     } else {
-      response.send(400,'/login');
+      response.status(400).send('Either e-mail or password not matching. Please <a href ="/login">login</a>')
     }
 
   } else {
-    response.redirect(403,'/register');
+    response.status(403).send('Looks like youre not in the system, please: <a href="/register">register</a> to continue.');
   }
 
 });
@@ -249,11 +247,10 @@ app.post('/login', (request, response,) => {
 app.post('/logout', (request, response) => {
   // response.clearCookie("user_id")
   request.session = null;
-  console.log("Did you mean to logout?")
   response.redirect('/urls');
 
 });
 
 app.listen(PORT, () => {
-  console.log(`TURNT MAH HEADPHONES UP TO ${PORT}`);
+  console.log(`Listening on port: ${PORT}`);
 });
