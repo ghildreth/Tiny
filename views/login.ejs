@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>TinyApp</title>
+
+  </head>
+  <body style="font-size:20px; padding:50px;">
+    <% if (!user) { %>
+    <h1>My Awesome Log in page</h1>
+    <form action="/login" method="POST" style="margin:150px;">
+      <label for="email"> Enter e-mail to log-in:</label>
+    </br>
+      <input type="email" name="email">
+      </br>
+      <label for="password"> ... and a password</label>
+    </br>
+      <input type="password" name="password">
+      <input type='submit'" value='Submit'>
+      </form>
+      <% } else { %>
+       <ul class="nav navbar-nav">
+      <h6>Currently logged in as: <%= user.user_id %></h6>
+      <form  action="/logout"method="POST" style="margin:75px;">
+        <label for="username"> Logout</label>
+      <input id="name" type"=text" name="username" placeholder= "login">
+      <input type="submit" value="Clear">
+    </form>
+
+      <% } %>
+
+
+  </body>
+</html>

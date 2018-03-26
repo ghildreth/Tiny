@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+  <% include ./partials/_header %>
+</head>
+<body>
+
+<h1> List shortened URLS and Long URLs</h1>
+  <% for (let shortUrl in urls) { %>
+    <% var longUrl = urls[shortUrl] %>
+
+    <li>
+
+      <div> <%= shortUrl %> - <a href = "/u/<%= shortUrl %>" target="_blank"><%= longUrl %></a></div>
+
+
+
+      <form method="POST" action="/urls/<%=shortUrl%>/delete">
+
+        <button type="submit">Delete</button>
+        <a href="/urls/<%= shortUrl %>">Edit</a>
+        <br>
+
+
+      </form>
+    </li>
+  <% } %>
+       <a href="/urls/new">click here to create your own!</a>
+
+
+ </body>
+</html>

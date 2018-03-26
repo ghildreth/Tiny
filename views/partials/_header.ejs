@@ -1,0 +1,39 @@
+<!-- views/partials/_header.ejs -->
+
+<meta charset="UTF-8">
+<title>Tiny App</title>
+
+<link rel= "stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+<style>
+  body {padding-top: 50px; }
+</style>
+<nav class = "navbar navbar-default" role="navigation">
+<div class = "container-fluid">
+
+  <div class ="navbar-header">
+    <a class ="navbar-brand" href="#">
+      <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+    </a>
+
+
+    <% if (user) { %>
+    <ul class="nav navbar-nav">
+    <form method="POST" action="/logout">
+         <label>Currently logged in as: <%= user.email %></label>
+          <button type="submit">Log out</button>
+    </form>
+    <% } else {%>
+    <form>
+     <ul class="nav navbar-nav">
+      <h6>Currently not logged in</h6>
+          <a href="/register">Register</a>
+          <a href="/login">Login</a>
+         </form>
+    <% } %>
+
+    </ul>
+  </div>
+</div>
+</nav>
