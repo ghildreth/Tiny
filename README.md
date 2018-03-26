@@ -4,9 +4,6 @@ TinyApp is a fulll stack web application built with Node and Express that allows
 
 # Final Product
 
-[]
-[]
-=======
 ![screenshot from 2018-03-24 17-32-28](https://user-images.githubusercontent.com/34799149/37870483-395be24c-2f8c-11e8-927f-3896d847f6a8.png)
 ![screenshot from 2018-03-24 17-36-15](https://user-images.githubusercontent.com/34799149/37870477-23173748-2f8c-11e8-8b66-f114194e17db.png)
 
