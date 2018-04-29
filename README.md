@@ -1,6 +1,3 @@
-TO WHOM IT MAY CONERN;
-I had a Git issue, this is a new REPO to display my working code. I had to nuke my old repo and i transfered the working files to here.
-
 
 # TinyApp Project
 
